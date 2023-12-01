@@ -5,7 +5,7 @@ LOAD='MAGAer13/mplug-owl2-llama2-7b'
 DATA_FILE=./playground/data/llava_v1_5_mix665k.json
 deepspeed mplug_owl2/train/train_mem.py \
     --lora_enable True --lora_r 128 --lora_alpha 256 --visual_abstractor_lr 2e-5 \
-    --deepspeed ./scripts/zero3.json \
+    --deepspeed ./scripts/zero3_offload.json \
     --model_name_or_path $LOAD \
     --version v1 \
     --data_path $DATA_FILE \
